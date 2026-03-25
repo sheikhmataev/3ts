@@ -44,6 +44,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   metadataBase: new URL("https://www.3ts.no"),
   alternates: {
     canonical: "/",
@@ -57,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "3TS Industriservice AS",
     images: [
       {
-        url: "/logo.png",
+        url: "/assets/logo.png",
         width: 1200,
         height: 630,
         alt: "3TS Industriservice AS Logo",
@@ -68,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "3TS Industriservice AS - Sertifiserte sveisere for prosessindustrien",
     description: "3TS Industriservice AS leverer komplette løsninger for prosessindustrien. Sertifiserte sveisere med over 25 års erfaring.",
-    images: ["/logo.png"],
+    images: ["/assets/logo.png"],
   },
   robots: {
     index: true,
