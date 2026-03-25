@@ -25,21 +25,21 @@ export default function Kontakt() {
       title: "Eier",
       phone: "99 50 43 11",
       email: "tore@3ts.no",
-      image: "/tore.png"
+      image: "/assets/tore.png"
     },
     {
       name: "Leif Tore Mauritzen",
       title: "Salgsingeniør",
       phone: "99 36 70 82",
       email: "leiftore@3ts.no",
-      image: "/ghani.png"
+      image: "/assets/ghani.png"
     },
     {
       name: "Hans Peder Sveum",
       title: "Montør",
       phone: "41 32 58 44",
       email: "peder@3ts.no",
-      image: "/hanspeder.png"
+      image: "/assets/hanspeder.png"
     }
   ];
 

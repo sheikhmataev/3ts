@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <Image src="/logo.png" alt="3TS Logo" width={120} height={40} className="h-10 w-auto mb-4 brightness-0 invert" />
+            <Image src="/assets/logo.png" alt="3TS Logo" width={120} height={40} className="h-10 w-auto mb-4 brightness-0 invert" />
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               3TS Industriservice AS — Sertifiserte norske sveisere med over 25 års erfaring. Spesialisert på prosessanlegg og næringsmiddelindustrien.
             </p>
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">© 2025 3TS Industriservice AS. Alle rettigheter forbeholdt.</p>
+          <p className="text-slate-500 text-sm">© 2026 3TS Industriservice AS. Alle rettigheter forbeholdt.</p>
           <p className="text-slate-600 text-xs">Stiftet 1995 · Gjøvik, Norge</p>
         </div>
       </div>

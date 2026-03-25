@@ -35,7 +35,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-end pb-24">
         <div className="absolute inset-0">
-          <Image src="/bilde_med_bil.png" alt="3TS Industriservice" fill className="object-cover" priority />
+          <Image src="/assets/bilde_med_bil.png" alt="3TS Industriservice" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/20" />
         </div>
         
@@ -111,7 +111,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
-                <Image src="/sveising.png" alt="Sveising" fill className="object-cover" />
+                <Image src="/assets/3dtegning.png" alt="3D-visualisering" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                 <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3">
                   <p className="text-white font-semibold text-sm">Sertifisert siden 1997</p>
