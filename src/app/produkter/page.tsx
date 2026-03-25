@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Produkter() {
   const products = [
@@ -13,7 +15,7 @@ export default function Produkter() {
       material: "Rustfritt (304L)",
       details: "51mm kuleventil på utslipp",
       price: "10 000,- + mva.",
-      image: "/tralle_stående.png"
+      image: "/tralle_staende.png"
     },
     {
       id: 2,
@@ -72,21 +74,22 @@ export default function Produkter() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <Navigation currentPage="/produkter" />
+    <div className="bg-white">
+      <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Våre Produkter
-            </h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Kvalitetsprodukter i rustfritt stål for industriell bruk
-            </p>
-          </div>
+      <section className="relative pt-16 bg-slate-900">
+        <div className="absolute inset-0">
+          <Image src="/tralle_staende.png" alt="Produkter" fill className="object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <span className="text-red-400 text-sm font-semibold uppercase tracking-widest">Produkter</span>
+          <h1 className="text-5xl md:text-6xl font-black text-white mt-2 mb-6">
+            Våre <span className="text-red-500">produkter</span>
+          </h1>
+          <p className="text-slate-300 text-xl max-w-2xl mx-auto">
+            Egenproduserte produkter i rustfritt stål — bygget for å vare.
+          </p>
         </div>
       </section>
 
@@ -176,60 +179,21 @@ export default function Produkter() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Bestill i dag
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Ta kontakt med oss for bestilling eller spørsmål om våre produkter. Vi hjelper deg med å finne riktig løsning for ditt behov.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:99504311" className="inline-flex items-center bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 hover:scale-105">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Ring for bestilling
-            </a>
-            <Link href="/kontakt" className="inline-flex items-center bg-yellow-400 text-red-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Kontakt oss
-            </Link>
-          </div>
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="bg-slate-900 rounded-3xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Trenger du noe skreddersydd?</h2>
+              <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">Vi produserer også etter spesifikasjoner. Ta kontakt for et uforpliktende tilbud.</p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link href="/kontakt" className="px-8 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-all">Kontakt oss</Link>
+                <a href="tel:99504311" className="px-8 py-4 bg-slate-700 border border-slate-600 text-white font-bold rounded-xl hover:bg-slate-600 transition-all">Ring: 99 50 43 11</a>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="mb-6">
-              <Image
-                src="/logo.png"
-                alt="3TS Logo"
-                width={150}
-                height={50}
-                className="h-12 w-auto mx-auto opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-            <p className="mb-4 text-lg font-semibold">© 2025: 3TS Industriservice AS</p>
-            <p className="text-red-200 mb-6 max-w-2xl mx-auto">
-              Trenger du hjelp med energisparing eller prosess prosjekter ikke vær redd for å ta kontakt!
-            </p>
-            <div className="flex justify-center gap-6">
-              <Link href="/kontakt" className="inline-flex items-center bg-yellow-400 text-red-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105">
-                Kontakt oss
-              </Link>
-              <Link href="/" className="inline-flex items-center bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-                Tilbake til hjem
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function Kontakt() {
   const [formData, setFormData] = useState({
@@ -92,21 +93,19 @@ ${formData.message}
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <Navigation currentPage="/kontakt" />
+    <div className="bg-white">
+      <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Kontakt Oss
-            </h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Ta kontakt med vårt team for en uforpliktende samtale om ditt prosjekt
-            </p>
-          </div>
+      <section className="relative pt-16 bg-slate-900">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-red-950" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <span className="text-red-400 text-sm font-semibold uppercase tracking-widest">Kontakt</span>
+          <h1 className="text-5xl md:text-6xl font-black text-white mt-2 mb-6">
+            La oss <span className="text-red-500">snakke</span>
+          </h1>
+          <p className="text-slate-300 text-xl max-w-2xl mx-auto">
+            Ta kontakt med vårt team for en uforpliktende samtale om ditt prosjekt.
+          </p>
         </div>
       </section>
 
@@ -387,60 +386,7 @@ ${formData.message}
         </div>
       </section>
 
-      {/* Quick Contact */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Trenger du hjelp med prosjektet ditt?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Vi er alltid klare for en uforpliktende samtale om ditt prosjekt. Ring oss direkte eller send en e-post.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:99504311" className="inline-flex items-center bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 hover:scale-105">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Ring oss nå
-            </a>
-            <a href="mailto:kontakt@3ts.no" className="inline-flex items-center bg-yellow-400 text-red-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-                Send e-post
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="mb-6">
-              <Image
-                src="/logo.png"
-                alt="3TS Logo"
-                width={150}
-                height={50}
-                className="h-12 w-auto mx-auto opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-            <p className="mb-4 text-lg font-semibold">© 2025: 3TS Industriservice AS</p>
-            <p className="text-red-200 mb-6 max-w-2xl mx-auto">
-              Trenger du hjelp med energisparing eller prosess prosjekter ikke vær redd for å ta kontakt!
-            </p>
-            <div className="flex justify-center gap-6">
-              <a href="tel:99504311" className="inline-flex items-center bg-yellow-400 text-red-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105">
-                Ring oss
-              </a>
-              <Link href="/" className="inline-flex items-center bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-                Tilbake til hjem
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

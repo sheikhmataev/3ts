@@ -3,24 +3,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Tjenester() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <Navigation currentPage="/tjenester" />
+    <div className="bg-white">
+      <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Våre Tjenester
-            </h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Vi leverer komplette løsninger for prosessindustrien med fokus på kvalitet og sikkerhet
-            </p>
-          </div>
+      <section className="relative pt-16 bg-slate-900 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/sveising.png" alt="Tjenester" fill className="object-cover opacity-25" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <span className="text-red-400 text-sm font-semibold uppercase tracking-widest">Tjenester</span>
+          <h1 className="text-5xl md:text-6xl font-black text-white mt-2 mb-6">
+            Hva vi kan gjøre<br /><span className="text-red-500">for deg</span>
+          </h1>
+          <p className="text-slate-300 text-xl max-w-2xl mx-auto mb-10">
+            Fra første befaring til ferdig anlegg — totalansvar i alle ledd.
+          </p>
+          <Link href="/kontakt" className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-all text-lg">
+            Få tilbud
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+          </Link>
         </div>
       </section>
 
@@ -224,60 +231,19 @@ export default function Tjenester() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Trenger du hjelp med prosjektet ditt?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Ved ønske kommer vi på befaring, her bidrar vi med løsningsforslag på prosjekter av ulik størrelse.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/kontakt" className="inline-flex items-center bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 hover:scale-105">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Kontakt oss for befaring
-            </Link>
-            <Link href="/produkter" className="inline-flex items-center bg-yellow-400 text-red-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
-              Se våre produkter
-            </Link>
-          </div>
+      <section className="py-24 bg-red-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Klar for å komme i gang?</h2>
+            <p className="text-red-100 text-xl mb-10">Kontakt oss i dag for en uforpliktende samtale om ditt prosjekt.</p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/kontakt" className="px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:bg-slate-100 transition-all text-lg">Kontakt oss</Link>
+              <a href="tel:99504311" className="px-8 py-4 bg-red-700 border border-red-500 text-white font-bold rounded-xl hover:bg-red-800 transition-all text-lg">Ring: 99 50 43 11</a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-r from-red-600 to-red-700 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="mb-6">
-              <Image
-                src="/logo.png"
-                alt="3TS Logo"
-                width={150}
-                height={50}
-                className="h-12 w-auto mx-auto opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
-            <p className="mb-4 text-lg font-semibold">© 2025: 3TS Industriservice AS</p>
-            <p className="text-red-200 mb-6 max-w-2xl mx-auto">
-              Trenger du hjelp med energisparing eller prosess prosjekter ikke vær redd for å ta kontakt!
-            </p>
-            <div className="flex justify-center gap-6">
-              <Link href="/kontakt" className="inline-flex items-center bg-yellow-400 text-red-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-all duration-300 hover:scale-105">
-                Kontakt oss
-              </Link>
-              <Link href="/" className="inline-flex items-center bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-                Tilbake til hjem
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
