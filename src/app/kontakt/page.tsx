@@ -22,8 +22,8 @@ export default function Kontakt() {
   const teamMembers = [
     {
       name: "Tore Bræin",
-      title: "Eier",
-      phone: "99 50 43 11",
+      title: "Daglig leder / Eier",
+      phone: "915 46 834",
       email: "tore@3ts.no",
       image: "/assets/tore.png"
     },

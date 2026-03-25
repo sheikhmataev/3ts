@@ -47,7 +47,7 @@ export default function OmOss() {
             <ScrollReveal direction="left">
               <div className="space-y-6">
                 <p className="text-slate-600 text-lg leading-relaxed">
-                  3TS Industriservice AS ble stiftet i 1995 av 4 sertifiserte sveisere i Hunndalen, Gjøvik. Med over 25 års erfaring har vi bygget et solid omdømme som en pålitelig leverandør av komplette løsninger for prosessanlegg.
+                  3TS Industriservice AS ble stiftet i 1995 av 4 sertifiserte sveisere. I dag holder vi til på Industrigata 50 i Lillehammer med 13 ansatte. Med over 25 års erfaring har vi bygget et solid omdømme som en pålitelig leverandør av komplette løsninger for prosessanlegg.
                 </p>
                 <p className="text-slate-600 text-lg leading-relaxed">
                   Vår kontinuerlige fokus på kvalitet, sikkerhet og kundetilfredshet har gjort oss til en foretrukket partner innen næringsmiddelindustrien.
@@ -60,7 +60,7 @@ export default function OmOss() {
                 <h3 className="text-2xl font-bold text-slate-900 mb-8">Vår reise</h3>
                 <div className="space-y-6">
                   {[
-                    { year: "1995", title: "Selskapet stiftes", desc: "4 mann starter i Hunndalen, Gjøvik" },
+                    { year: "1995", title: "Selskapet stiftes", desc: "4 mann starter selskapet" },
                     { year: "1997", title: "Sertifisering", desc: "Blir sertifiserte sveisere" },
                     { year: "2000-tallet", title: "Ekspansjon", desc: "Ledende i næringsmiddelindustrien" },
                     { year: "I dag", title: "Moderne bedrift", desc: "Totalansvar for prosjekter" }

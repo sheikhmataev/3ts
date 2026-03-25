@@ -43,7 +43,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 border border-red-500/30 mb-6">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              <span className="text-red-400 text-xs font-semibold uppercase tracking-widest">3TS Industriservice AS · Gjøvik</span>
+              <span className="text-red-400 text-xs font-semibold uppercase tracking-widest">3TS Industriservice AS · Lillehammer</span>
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
               Sveising og<br /><span className="text-red-500">prosessanlegg</span><br />av høyeste klasse

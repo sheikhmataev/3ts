@@ -238,7 +238,7 @@ export default function Tjenester() {
             <p className="text-red-100 text-xl mb-10">Kontakt oss i dag for en uforpliktende samtale om ditt prosjekt.</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/kontakt" className="px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:bg-slate-100 transition-all text-lg">Kontakt oss</Link>
-              <a href="tel:99504311" className="px-8 py-4 bg-red-700 border border-red-500 text-white font-bold rounded-xl hover:bg-red-800 transition-all text-lg">Ring: 99 50 43 11</a>
+              <a href="tel:91546834" className="px-8 py-4 bg-red-700 border border-red-500 text-white font-bold rounded-xl hover:bg-red-800 transition-all text-lg">Ring: 915 46 834</a>
             </div>
           </ScrollReveal>
         </div>

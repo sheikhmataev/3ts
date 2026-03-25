@@ -187,7 +187,7 @@ export default function Produkter() {
               <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">Vi produserer også etter spesifikasjoner. Ta kontakt for et uforpliktende tilbud.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link href="/kontakt" className="px-8 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-all">Kontakt oss</Link>
-                <a href="tel:99504311" className="px-8 py-4 bg-slate-700 border border-slate-600 text-white font-bold rounded-xl hover:bg-slate-600 transition-all">Ring: 99 50 43 11</a>
+                <a href="tel:91546834" className="px-8 py-4 bg-slate-700 border border-slate-600 text-white font-bold rounded-xl hover:bg-slate-600 transition-all">Ring: 915 46 834</a>
               </div>
             </div>
           </ScrollReveal>
