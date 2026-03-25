@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import { getImagePath } from "@/lib/images";
 
 export default function Kontakt() {
   const [formData, setFormData] = useState({
@@ -25,21 +27,21 @@ export default function Kontakt() {
       title: "Daglig leder / Eier",
       phone: "915 46 834",
       email: "tore@3ts.no",
-      image: "/assets/tore.png"
+      image: getImagePath("/assets/tore.png")
     },
     {
       name: "Leif Tore Mauritzen",
       title: "Salgsingeniør",
       phone: "99 36 70 82",
       email: "leiftore@3ts.no",
-      image: "/assets/ghani.png"
+      image: getImagePath("/assets/ghani.png")
     },
     {
       name: "Hans Peder Sveum",
       title: "Montør",
       phone: "41 32 58 44",
       email: "peder@3ts.no",
-      image: "/assets/hanspeder.png"
+      image: getImagePath("/assets/hanspeder.png")
     }
   ];
 

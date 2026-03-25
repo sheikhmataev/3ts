@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { getImagePath } from "@/lib/images";
 
 export default function Tjenester() {
   return (
@@ -13,7 +14,7 @@ export default function Tjenester() {
 
       <section className="relative pt-16 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/assets/sveising.png" alt="Tjenester" fill className="object-cover opacity-25" />
+          <Image src={getImagePath("/assets/sveising.png")} alt="Tjenester" fill className="object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
@@ -116,7 +117,7 @@ export default function Tjenester() {
             </div>
             <div>
               <Image
-                src="/assets/3dtegning.png"
+                src={getImagePath("/assets/3dtegning.png")}
                 alt="3D Tegning eksempel"
                 width={600}
                 height={400}
@@ -133,7 +134,7 @@ export default function Tjenester() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <Image
-                src="/assets/forprosjekt.png"
+                src={getImagePath("/assets/forprosjekt.png")}
                 alt="Prosjektgjennomføring"
                 width={600}
                 height={400}

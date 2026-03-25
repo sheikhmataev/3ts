@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getImagePath } from "@/lib/images";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <Image src="/assets/logo.png" alt="3TS Logo" width={120} height={40} className="h-10 w-auto mb-4 brightness-0 invert" />
+            <Image src={getImagePath("/assets/logo.png")} alt="3TS Logo" width={120} height={40} className="h-10 w-auto mb-4 brightness-0 invert" />
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               3TS Industriservice AS — Sertifiserte norske sveisere med over 25 års erfaring. Spesialisert på prosessanlegg og næringsmiddelindustrien.
             </p>

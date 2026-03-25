@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { getImagePath } from "@/lib/images";
 
 export default function Produkter() {
   const products = [
@@ -15,7 +16,7 @@ export default function Produkter() {
       material: "Rustfritt (304L)",
       details: "51mm kuleventil på utslipp",
       price: "10 000,- + mva.",
-      image: "/assets/tralle_staende.png"
+      image: getImagePath("/assets/tralle_staende.png")
     },
     {
       id: 2,
@@ -24,7 +25,7 @@ export default function Produkter() {
       material: "Rustfritt (304L)",
       details: "51mm kuleventil på utslipp",
       price: "18 000,- + mva.",
-      image: "/assets/tralle_liggende.png"
+      image: getImagePath("/assets/tralle_liggende.png")
     },
     {
       id: 3,
@@ -33,7 +34,7 @@ export default function Produkter() {
       material: "Rustfritt (304L)",
       details: "",
       price: "1 500,- + mva.",
-      image: "/assets/sveising.png"
+      image: getImagePath("/assets/sveising.png")
     },
     {
       id: 4,
@@ -42,7 +43,7 @@ export default function Produkter() {
       material: "Rustfritt (304L)",
       details: "",
       price: "1 500,- + mva.",
-      image: "/assets/sveising.png"
+      image: getImagePath("/assets/sveising.png")
     },
     {
       id: 5,
@@ -51,7 +52,7 @@ export default function Produkter() {
       material: "Rustfritt (304L)",
       details: "",
       price: "4 500,- + mva.",
-      image: "/assets/sveising.png"
+      image: getImagePath("/assets/sveising.png")
     },
     {
       id: 6,
@@ -60,7 +61,7 @@ export default function Produkter() {
       material: "Rustfritt (304L)",
       details: "",
       price: "3 800,- + mva.",
-      image: "/assets/sveising.png"
+      image: getImagePath("/assets/sveising.png")
     },
     {
       id: 7,
@@ -69,7 +70,7 @@ export default function Produkter() {
       material: "Karbonstål",
       details: "",
       price: "45 000,- + mva.",
-      image: "/assets/forprosjekt.png"
+      image: getImagePath("/assets/forprosjekt.png")
     }
   ];
 
@@ -79,7 +80,7 @@ export default function Produkter() {
 
       <section className="relative pt-16 bg-slate-900">
         <div className="absolute inset-0">
-          <Image src="/assets/tralle_staende.png" alt="Produkter" fill className="object-cover opacity-20" />
+          <Image src={getImagePath("/assets/tralle_staende.png")} alt="Produkter" fill className="object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">

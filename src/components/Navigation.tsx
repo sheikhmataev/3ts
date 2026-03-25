@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getImagePath } from "@/lib/images";
 
 const navItems = [
   { href: "/", label: "Hjem" },
@@ -53,7 +54,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex-shrink-0">
-              <Image src="/assets/logo.png" alt="3TS Logo" width={110} height={36} className="h-9 w-auto" priority />
+              <Image src={getImagePath("/assets/logo.png")} alt="3TS Logo" width={110} height={36} className="h-9 w-auto" priority />
             </Link>
 
             {/* Desktop nav */}
@@ -106,7 +107,7 @@ export default function Navigation() {
         isMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}>
         <div className="flex items-center justify-between px-5 h-16 border-b border-gray-100">
-          <Image src="/assets/logo.png" alt="3TS Logo" width={90} height={30} className="h-8 w-auto" />
+          <Image src={getImagePath("/assets/logo.png")} alt="3TS Logo" width={90} height={30} className="h-8 w-auto" />
           <button
             onClick={() => setIsMenuOpen(false)}
             className="p-2 rounded-lg text-slate-500 hover:bg-gray-100 transition-colors"
