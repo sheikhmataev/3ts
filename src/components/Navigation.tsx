@@ -74,7 +74,7 @@ export default function Navigation() {
                 </Link>
               ))}
               <Link
-                href="/kontakt"
+                href="/kontakt#kontakt-skjema"
                 className="ml-3 px-5 py-2 bg-red-600 text-white text-sm font-semibold rounded-lg hover:bg-red-700 active:scale-95 transition-all duration-200 shadow-sm"
               >
                 Få tilbud
@@ -104,7 +104,7 @@ export default function Navigation() {
       />
 
       {/* Mobile drawer */}
-      <div className={`fixed top-0 right-0 h-full w-72 z-50 bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out md:hidden ${
+      <div className={`fixed top-0 right-0 h-full w-[280px] sm:w-72 z-50 bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out md:hidden ${
         isMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}>
         <div className="flex items-center justify-between px-5 h-16 border-b border-gray-100">
@@ -135,7 +135,7 @@ export default function Navigation() {
         </nav>
         <div className="px-4 pb-8 space-y-2">
           <Link
-            href="/kontakt"
+            href="/kontakt#kontakt-skjema"
             className="block w-full py-3 bg-red-600 text-white text-center font-semibold rounded-xl hover:bg-red-700 transition-colors"
           >
             Få tilbud
