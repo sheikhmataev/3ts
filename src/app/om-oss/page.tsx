@@ -50,7 +50,7 @@ export default function OmOss() {
                   3TS Industriservice AS ble stiftet i 1995 av 4 sertifiserte sveisere. I dag holder vi til på Industrigata 50 i Lillehammer med 13 ansatte. Med over 25 års erfaring har vi bygget et solid omdømme som en pålitelig leverandør av komplette løsninger for prosessanlegg.
                 </p>
                 <p className="text-slate-600 text-lg leading-relaxed">
-                  Vår kontinuerlige fokus på kvalitet, sikkerhet og kundetilfredshet har gjort oss til en foretrukket partner innen næringsmiddelindustrien.
+                  Vår kontinuerlige fokus på kvalitet, sikkerhet og kundetilfredshet har gjort oss til en foretrukket partner innen næringsmiddel og energi. Vi brenner for fagets fremtid – vi har fast inne utplasseringselever fra Vargstad videregående skole (inkludert engasjerte elever som Jonas og Abdulghani) som står på og lærer av de beste tre dager i uka!
                 </p>
               </div>
             </ScrollReveal>
@@ -62,7 +62,7 @@ export default function OmOss() {
                   {[
                     { year: "1995", title: "Selskapet stiftes", desc: "4 mann starter selskapet" },
                     { year: "1997", title: "Sertifisering", desc: "Blir sertifiserte sveisere" },
-                    { year: "2000-tallet", title: "Ekspansjon", desc: "Ledende i næringsmiddelindustrien" },
+                    { year: "2000-tallet", title: "Ekspansjon", desc: "Ledende innen næringsmiddel og energi" },
                     { year: "I dag", title: "Moderne bedrift", desc: "Totalansvar for prosjekter" }
                   ].map((item, index) => (
                     <div key={index} className="flex gap-4">

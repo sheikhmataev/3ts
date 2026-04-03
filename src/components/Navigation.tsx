@@ -13,6 +13,7 @@ const navItems = [
   { href: "/om-oss", label: "Om oss" },
   { href: "/kontakt", label: "Kontakt" },
   { href: "/faktura", label: "Faktura" },
+  { href: "/album", label: "Album" },
 ];
 
 export default function Navigation() {
@@ -140,10 +141,10 @@ export default function Navigation() {
             Få tilbud
           </Link>
           <a
-            href="tel:99504311"
+            href="tel:90933503"
             className="block w-full py-3 border border-gray-200 text-slate-700 text-center text-sm rounded-xl hover:bg-gray-50 transition-colors"
           >
-            Ring: 99 50 43 11
+            Ring: 909 33 503
           </a>
         </div>
       </div>

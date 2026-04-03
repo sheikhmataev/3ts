@@ -50,7 +50,7 @@ export default function Home() {
               Sveising og<br /><span className="text-red-500">prosessanlegg</span><br />av høyeste klasse
             </h1>
             <p className="text-lg text-slate-300 mb-10 leading-relaxed">
-              Sertifiserte norske sveisere med over 25 års erfaring. Vi tar totalansvar — fra forprosjekt og 3D-tegning til igangkjøring.
+              Primært rettet mot næringsmiddel og energi. Vi har topp moderne utstyr for 3D-skanning, flytting av fabrikker og montering av linjer — og tar totalansvaret for prosjektet ditt.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/kontakt" className="px-8 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-all text-lg shadow-lg shadow-red-900/40">Kontakt oss</Link>
@@ -123,7 +123,7 @@ export default function Home() {
               <div>
                 <span className="text-red-600 text-sm font-semibold uppercase tracking-widest">Om 3TS</span>
                 <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-2 mb-6 leading-tight">Stiftet 1995.<br />Spesialister siden dag én.</h2>
-                <p className="text-slate-600 leading-relaxed mb-6">3TS Industriservice AS startet med 4 mann i Hunndalen ved Gjøvik. Tre grunnleggere hadde navn som startet på T, én på S — derav 3TS. Siden 1997 er vi sertifiserte sveisere, spesialisert på næringsmiddelindustrien.</p>
+                <p className="text-slate-600 leading-relaxed mb-6">3TS Industriservice AS startet med 4 mann i Hunndalen ved Gjøvik. Tre grunnleggere hadde navn som startet på T, én på S — derav 3TS. Siden 1997 er vi sertifiserte sveisere, og vi gjennomfører de aller fleste typer prosjekter primært innen næringsmiddel og energi.</p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {["Næringsmiddelindustri","Rustfritt stål","3D-prosjektering","Totalentreprise"].map(tag => (
                     <span key={tag} className="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">{tag}</span>
@@ -167,7 +167,7 @@ export default function Home() {
             <p className="text-red-100 text-xl mb-10">Ta kontakt i dag for en uforpliktende samtale om ditt prosjekt.</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/kontakt" className="px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:bg-slate-100 transition-all text-lg">Kontakt oss</Link>
-              <a href="tel:99504311" className="px-8 py-4 bg-red-700 border border-red-500 text-white font-bold rounded-xl hover:bg-red-800 transition-all text-lg">Ring: 99 50 43 11</a>
+              <a href="tel:90933503" className="px-8 py-4 bg-red-700 border border-red-500 text-white font-bold rounded-xl hover:bg-red-800 transition-all text-lg">Ring: 909 33 503</a>
             </div>
           </ScrollReveal>
         </div>

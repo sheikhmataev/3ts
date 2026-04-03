@@ -13,17 +13,17 @@ export default function Footer() {
               3TS Industriservice AS — Sertifiserte norske sveisere med over 25 års erfaring. Spesialisert på prosessanlegg og næringsmiddelindustrien.
             </p>
             <div className="flex gap-4 mt-6">
-              <a href="tel:91546834" className="flex items-center gap-2 text-slate-400 hover:text-red-400 text-sm transition-colors">
+              <a href="tel:90933503" className="flex items-center gap-2 text-slate-400 hover:text-red-400 text-sm transition-colors">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                +47 915 46 834
+                +47 909 33 503
               </a>
-              <a href="mailto:kontakt@3ts.no" className="flex items-center gap-2 text-slate-400 hover:text-red-400 text-sm transition-colors">
+              <a href="mailto:geir@3ts.no" className="flex items-center gap-2 text-slate-400 hover:text-red-400 text-sm transition-colors">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                kontakt@3ts.no
+                geir@3ts.no
               </a>
             </div>
           </div>
@@ -36,6 +36,7 @@ export default function Footer() {
                 { href: "/om-oss", label: "Om oss" },
                 { href: "/kontakt", label: "Kontakt" },
                 { href: "/faktura", label: "Faktura" },
+                { href: "/album", label: "Album" },
               ].map(item => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-slate-400 hover:text-white text-sm transition-colors">
