@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import ClientSlider from "@/components/ClientSlider";
 import { getImagePath } from "@/lib/images";
 
 const stats = [
@@ -147,14 +148,9 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-black text-white mt-2 mb-3">Kunder vi er stolte av</h2>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            {clients.map((c, i) => (
-              <ScrollReveal key={i} delay={i * 40}>
-                <div className="bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-center hover:border-red-600/50 hover:bg-slate-700 transition-all">
-                  <span className="text-slate-300 text-sm font-medium">{c}</span>
-                </div>
-              </ScrollReveal>
-            ))}
+          <div className="space-y-4 py-4 overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
+            <ClientSlider clients={clients} direction="left" />
+            <ClientSlider clients={clients} direction="right" />
           </div>
         </div>
       </section>

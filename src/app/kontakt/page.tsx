@@ -208,16 +208,17 @@ ${formData.message}
             </div>
             
             <div>
-              <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <p className="text-gray-600">Kartvisning</p>
-                  <p className="text-sm text-gray-500 mt-2">Industrigata 50, 2619 Lillehammer</p>
-                </div>
-              </div>
+            <div className="rounded-lg overflow-hidden h-96 shadow-lg border border-gray-100">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3185.3970593525296!2d10.436558678095112!3d61.131514975536724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466a886bccd30b5b%3A0x9e559b4f4bbf267!2sIndustrigata%2050%2C%202619%20Lillehammer!5e1!3m2!1sen!2sno!4v1775175148129!5m2!1sen!2sno" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
             </div>
           </div>
         </div>

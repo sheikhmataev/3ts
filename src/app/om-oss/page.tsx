@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import ClientSlider from "@/components/ClientSlider";
 
 export default function OmOss() {
   const customers = [
@@ -141,17 +142,13 @@ export default function OmOss() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <div className="bg-slate-50 rounded-3xl p-10">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {customers.map((customer, index) => (
-                  <div key={index} className="flex items-center gap-3 p-4 bg-white rounded-xl hover:bg-red-50 transition-colors cursor-pointer group">
-                    <div className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0 group-hover:scale-125 transition-transform" />
-                    <span className="text-slate-700 font-medium group-hover:text-red-600 transition-colors">{customer}</span>
-                  </div>
-                ))}
+            <div className="bg-slate-50 rounded-3xl py-10 overflow-hidden">
+              <div className="space-y-4">
+                <ClientSlider clients={customers} direction="left" speed="120s" />
+                <ClientSlider clients={customers} direction="right" speed="120s" />
               </div>
               
-              <div className="mt-8 p-6 bg-yellow-50 rounded-xl border border-yellow-200">
+              <div className="mt-8 mx-10 p-6 bg-yellow-50 rounded-xl border border-yellow-200">
                 <h3 className="text-lg font-bold text-yellow-800 mb-2">Fornøyde kunder siden 1995</h3>
                 <p className="text-yellow-700">
                   GEA, Alfa Laval, Thomas Thiis — og mange fler gjennom 25+ år i bransjen.
