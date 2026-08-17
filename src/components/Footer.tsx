@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { getImagePath } from "@/lib/images";
 
 export default function Footer() {
@@ -62,9 +63,13 @@ export default function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">© 2026 3TS Industriservice AS. Alle rettigheter forbeholdt.</p>
-          <p className="text-slate-600 text-xs">Stiftet 1995 · Gjøvik, Norge</p>
+          <p className="text-slate-600 text-xs">Stiftet 1995 · Lillehammer, Norge</p>
+        </div>
+        <div className="mt-6 pt-6 border-t border-slate-800">
+          <mash-credit lang="nb" variant="minimal"></mash-credit>
         </div>
       </div>
+      <Script src={getImagePath("/assets/mash-credit.js")} strategy="afterInteractive" />
     </footer>
   );
 }

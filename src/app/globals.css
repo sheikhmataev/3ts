@@ -168,3 +168,10 @@ body {
 .animate-slide-right:hover {
   animation-play-state: paused;
 }
+
+/* mash-credit is a decorative footer badge, not content */
+@media print {
+  mash-credit {
+    display: none !important;
+  }
+}
