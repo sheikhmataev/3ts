@@ -34,7 +34,7 @@ export default function Kontakt() {
       title: "Salgsingeniør",
       phone: "99 36 70 82",
       email: "leiftore@3ts.no",
-      image: getImagePath("/assets/ghani.png")
+      image: getImagePath("/assets/avatar-placeholder.svg")
     },
     {
       name: "Hans Peder Sveum",
