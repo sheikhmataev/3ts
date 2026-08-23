@@ -1,21 +1,57 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------
+   3TS design tokens.
+   Accent is sampled straight from logo.png (#FFD706) — the mark is
+   yellow on black, so the site is too. Yellow never carries text on
+   light ground; it is a fill or a marker, ink sits on top of it.
+---------------------------------------------------------------- */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary-red: #DC2626;
-  --primary-yellow: #FCD34D;
-  --primary-white: #FFFFFF;
-  --secondary-red: #991B1B;
-  --secondary-yellow: #F59E0B;
-  --secondary-gray: #F3F4F6;
+  --paper: #f7f7f5;
+  --surface: #ffffff;
+  --band: #101214;
+  --band-ink: #f2f2ee;
+  --band-muted: #90969c;
+  --line: #e2e2dd;
+  --line-strong: #c7c7c0;
+  --ink: #101214;
+  --muted: #5c6166;
+  --accent: #ffd706;
+  --accent-hover: #e8c300;
+  --accent-ink: #101214;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #0d0f11;
+    --surface: #14171a;
+    --band: #14171a;
+    --band-ink: #edede9;
+    --band-muted: #9ba1a7;
+    --line: #262a2e;
+    --line-strong: #3a3f44;
+    --ink: #edede9;
+    --muted: #9ba1a7;
   }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-band: var(--band);
+  --color-band-ink: var(--band-ink);
+  --color-band-muted: var(--band-muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 html {
@@ -23,150 +59,144 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar */
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--paper);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-red);
-  border-radius: 5px;
+  background: var(--line-strong);
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-red);
+  background: var(--muted);
 }
 
-/* Animation classes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Display headings: tight grotesque, no orphans. */
+.display {
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  text-wrap: balance;
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.lede {
+  text-wrap: pretty;
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Kundelogoer: uendelig sløyfe mot høyre. Sporet er duplisert, så et
+   skift på 50% lander nøyaktig der sløyfen startet. */
+@keyframes client-drift {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.client-track {
+  animation: client-drift 70s linear infinite;
+}
+.client-track:hover {
+  animation-play-state: paused;
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out;
+/* Merkene ligger dempet i sløyfen og tennes i originalfarger på hover.
+   Ingen plate, ingen etikett: bare farge.
+
+   Stripa har derfor sin egen lyse flate i begge temaer. Logoene er tegnet
+   for hvit bunn, og på mørk flate faller originalfargene sammen med
+   bakgrunnen i det øyeblikket de slippes fram (Tine er #00205b, altså
+   1,2:1 mot mørk bunn). Lys flate er det som gjør hover mulig uten plate. */
+.client-strip {
+  background: #f7f7f5;
 }
 
-.animate-fadeInLeft {
-  animation: fadeInLeft 0.8s ease-out;
+.client-logo,
+.client-wordmark {
+  transition: filter 0.25s ease, opacity 0.25s ease, color 0.25s ease;
 }
 
-.animate-fadeInRight {
-  animation: fadeInRight 0.8s ease-out;
+.client-logo {
+  filter: grayscale(1);
+  opacity: 0.7;
 }
 
-.animate-scaleIn {
-  animation: scaleIn 0.6s ease-out;
+.client-wordmark {
+  color: #5c6166;
 }
 
-/* Scroll reveal animations */
+.client-item:hover .client-logo {
+  filter: none;
+  opacity: 1;
+}
+
+.client-item:hover .client-wordmark {
+  color: #101214;
+}
+
+/* Inngang på hero. Ren CSS, så forsiden slipper å laste JS for dette.
+   Bare opacity og transform, altså ingen layout-forskyvning og ingen CLS. */
+@keyframes enter-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.enter {
+  opacity: 0;
+  animation: enter-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.enter-1 { animation-delay: 0.05s; }
+.enter-2 { animation-delay: 0.15s; }
+.enter-3 { animation-delay: 0.25s; }
+
+/* Scroll reveal. Short travel — this is a workshop, not a stage. */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(12px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal-left.active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal-right.active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Infinite Sliding Animations */
-@keyframes slideLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes slideRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-.animate-slide-left {
-  display: flex;
-  width: max-content;
-  animation: slideLeft 40s linear infinite;
-}
-
-.animate-slide-right {
-  display: flex;
-  width: max-content;
-  animation: slideRight 40s linear infinite;
-}
-
-.animate-slide-left:hover,
-.animate-slide-right:hover {
-  animation-play-state: paused;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .enter {
+    opacity: 1;
+    animation: none;
+  }
+  .client-track {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 /* mash-credit is a decorative footer badge, not content */

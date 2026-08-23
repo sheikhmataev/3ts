@@ -1,126 +1,125 @@
-'use client';
-
-import Link from "next/link";
+import type { Metadata } from "next";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
 import ScrollReveal from "@/components/ScrollReveal";
-import ClientSlider from "@/components/ClientSlider";
+import { getImagePath } from "@/lib/images";
+
+export const metadata: Metadata = {
+  title: "Om oss",
+  description:
+    "Stiftet i 1995 med fire mann. I dag 13 ansatte på Industrigata 50 i Lillehammer, sertifiserte sveisere siden 1997.",
+  alternates: { canonical: "/om-oss" },
+};
+
+const timeline = [
+  { year: "1995", title: "Selskapet stiftes", desc: "4 mann starter selskapet" },
+  { year: "1997", title: "Sertifisering", desc: "Blir sertifiserte sveisere" },
+  { year: "2000-tallet", title: "Ekspansjon", desc: "Ledende innen næringsmiddel og energi" },
+  { year: "I dag", title: "Moderne bedrift", desc: "Totalansvar for prosjekter" },
+];
+
+const teamMembers = [
+  { name: "Tore Bræin", title: "Daglig leder / Eier", phone: "915 46 834", email: "tore@3ts.no", image: "/assets/tore.png" },
+  { name: "Leif Tore Mauritzen", title: "Salgsingeniør", phone: "99 36 70 82", email: "leiftore@3ts.no", image: "/assets/avatar-placeholder.svg" },
+  { name: "Hans Peder Sveum", title: "Montør", phone: "41 32 58 44", email: "peder@3ts.no", image: "/assets/hanspeder.png" },
+];
+
+const ksPoints = [
+  "Dokumentasjon, alle prosesser og prosedyrer",
+  "Styring, klare ansvarsområder og fullmakter",
+  "Kommunikasjon, strategi, mål og handlingsplaner",
+  "Kompetanse, informasjon og opplæring",
+  "Kvalitetsforbedringer, verifisere og korrigere",
+];
 
 export default function OmOss() {
-  const customers = [
-    "Tine", "Q-meieriene", "Ringnes", "Coca Cola", "Røra fabrikker", 
-    "Synnøve Finden", "Spirax", "Borg bryggeri", "Atna bryggeri", 
-    "Lillehammer Ysteri", "Nortura", "Aass bryggeri", "Maarud", 
-    "GEA", "Alfa Laval", "Thomas Thiis"
-  ];
-
   return (
-    <div className="bg-white">
+    <div>
       <Navigation />
+      <main id="innhold">
 
-      <section className="relative pt-16 bg-slate-900">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-red-950" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <span className="text-red-400 text-sm font-semibold uppercase tracking-widest">Om oss</span>
-          <h1 className="text-5xl md:text-6xl font-black text-white mt-2 mb-6">
-            Historien bak <span className="text-red-500">3TS</span>
-          </h1>
-          <p className="text-slate-300 text-xl max-w-2xl mx-auto">
-            Stiftet i 1995 med fire mann. I dag en fullverdig leverandør av prosessanlegg.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title={<>Historien bak <span className="text-accent">3TS</span></>}
+        lede="Stiftet i 1995 med fire mann. I dag en fullverdig leverandør av prosessanlegg."
+        image="/assets/sveising.png"
+      />
 
-      {/* History Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-red-600 text-sm font-semibold uppercase tracking-widest">Historie</span>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-2 mb-6">Fra 4 mann til industriell ledelse</h2>
-              <p className="text-slate-600 text-xl max-w-3xl mx-auto">
-                Siden 1995 har vi vokst fra et lite sveiseverksted til en fullverdig leverandør av prosessanlegg.
-              </p>
+      {/* History — teksten kommer i to pust, tidslinja ett steg om gangen */}
+      <section className="py-20 lg:py-28 border-b border-line">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="lg:col-span-7">
+              <ScrollReveal>
+                <h2 className="display text-3xl lg:text-5xl font-semibold mb-8">Fra 4 mann til industriell ledelse</h2>
+              </ScrollReveal>
+
+              <div className="max-w-[62ch] lede">
+                <ScrollReveal delay={80}>
+                  <p className="text-ink text-lg leading-relaxed mb-5">
+                    3TS Industriservice AS ble stiftet i 1995 av 4 sertifiserte sveisere. I dag holder vi til på Industrigata 50 i Lillehammer med 13 ansatte. Med over 25 års erfaring har vi bygget et solid omdømme som en pålitelig leverandør av komplette løsninger for prosessanlegg.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={160}>
+                  <p className="text-muted leading-relaxed">
+                    Vår kontinuerlige fokus på kvalitet, sikkerhet og kundetilfredshet har gjort oss til en foretrukket partner innen næringsmiddel og energi. Vi brenner for fagets fremtid. Vi har fast inne utplasseringselever fra Vargstad videregående skole (inkludert engasjerte elever som Jonas og Abdulghani) som står på og lærer av de beste tre dager i uka!
+                  </p>
+                </ScrollReveal>
+              </div>
             </div>
-          </ScrollReveal>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal direction="left">
-              <div className="space-y-6">
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  3TS Industriservice AS ble stiftet i 1995 av 4 sertifiserte sveisere. I dag holder vi til på Industrigata 50 i Lillehammer med 13 ansatte. Med over 25 års erfaring har vi bygget et solid omdømme som en pålitelig leverandør av komplette løsninger for prosessanlegg.
-                </p>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Vår kontinuerlige fokus på kvalitet, sikkerhet og kundetilfredshet har gjort oss til en foretrukket partner innen næringsmiddel og energi. Vi brenner for fagets fremtid – vi har fast inne utplasseringselever fra Vargstad videregående skole (inkludert engasjerte elever som Jonas og Abdulghani) som står på og lærer av de beste tre dager i uka!
-                </p>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal direction="right" delay={200}>
-              <div className="bg-slate-50 rounded-3xl p-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-8">Vår reise</h3>
-                <div className="space-y-6">
-                  {[
-                    { year: "1995", title: "Selskapet stiftes", desc: "4 mann starter selskapet" },
-                    { year: "1997", title: "Sertifisering", desc: "Blir sertifiserte sveisere" },
-                    { year: "2000-tallet", title: "Ekspansjon", desc: "Ledende innen næringsmiddel og energi" },
-                    { year: "I dag", title: "Moderne bedrift", desc: "Totalansvar for prosjekter" }
-                  ].map((item, index) => (
-                    <div key={index} className="flex gap-4">
-                      <div className="bg-red-600 text-white w-12 h-12 rounded-xl flex items-center justify-center font-black flex-shrink-0">
-                        {item.year.slice(0, 2)}
-                      </div>
+            <div className="lg:col-span-5">
+              <h3 className="text-sm font-semibold tracking-tight mb-6">Vår reise</h3>
+              <ol className="border-t border-line">
+                {timeline.map((item, i) => (
+                  <ScrollReveal key={item.year} delay={i * 90}>
+                    <li className="grid grid-cols-[6.5rem_1fr] gap-4 py-5 border-b border-line">
+                      <span className="font-mono text-xs text-muted pt-1 tabular-nums">{item.year}</span>
                       <div>
-                        <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
-                        <p className="text-slate-600">{item.desc}</p>
+                        <h4 className="font-semibold tracking-tight mb-1">{item.title}</h4>
+                        <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
+                    </li>
+                  </ScrollReveal>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Team */}
+      <section className="py-20 lg:py-28 border-b border-line">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-red-600 text-sm font-semibold uppercase tracking-widest">Prosess</span>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-2 mb-6">Slik jobber vi</h2>
-              <p className="text-slate-600 text-xl max-w-3xl mx-auto">
-                Vår arbeidsmetodikk sikrer kvalitet og effektivitet i alle prosjekter
-              </p>
-            </div>
+            <h2 className="display text-3xl lg:text-5xl font-semibold mb-3">Vårt Team</h2>
+            <p className="lede text-muted mb-12 max-w-lg">Erfarne fagfolk klar til å hjelpe deg med ditt prosjekt</p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Befaring",
-                desc: "Vi kommer på befaring og bidrar med løsningsforslag på prosjekter av ulik størrelse."
-              },
-              {
-                step: "02", 
-                title: "Forslag og estimater",
-                desc: "Vi utarbeider forslag med layouttegninger samt kostnadsestimater eller fastpris tilbud."
-              },
-              {
-                step: "03",
-                title: "3D visualisering",
-                desc: "Ved godkjent forslag tegner vi prosjektet i 3D, slik at du kan se forslaget før oppstart."
-              }
-            ].map((item, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
-                <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="bg-red-600 text-white w-14 h-14 rounded-xl flex items-center justify-center font-black text-xl mb-6">
-                    {item.step}
+          <div className="border-t-2 border-ink">
+            {teamMembers.map((member, i) => (
+              <ScrollReveal key={member.email} delay={i * 90}>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 items-center py-7 border-b border-line">
+                  <div className="md:col-span-1">
+                    <div className="relative w-16 h-16 overflow-hidden bg-surface border border-line">
+                      <Image src={getImagePath(member.image)} alt="" fill className="object-cover" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+
+                  <div className="md:col-span-4">
+                    <h3 className="text-lg font-semibold tracking-tight">{member.name}</h3>
+                    <p className="text-sm text-muted">{member.title}</p>
+                  </div>
+
+                  <div className="md:col-span-7 flex flex-col sm:flex-row sm:items-baseline sm:justify-end gap-1 sm:gap-8 text-sm">
+                    <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="font-mono text-ink hover:text-accent transition-colors w-fit">
+                      {member.phone}
+                    </a>
+                    <a href={`mailto:${member.email}`} className="text-muted hover:text-ink transition-colors w-fit">
+                      {member.email}
+                    </a>
+                  </div>
                 </div>
               </ScrollReveal>
             ))}
@@ -128,111 +127,97 @@ export default function OmOss() {
         </div>
       </section>
 
-      {/* Customers Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* HMS + KS — to kort som kommer inn hver for seg */}
+      <section className="py-20 lg:py-28 border-b border-line">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-red-600 text-sm font-semibold uppercase tracking-widest">Kunder</span>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-2 mb-6">Ledende selskaper stoler på oss</h2>
-              <p className="text-slate-600 text-xl max-w-3xl mx-auto">
-                Vi er stolte av å samarbeide med de største navnene innen næringsmiddelindustrien
-              </p>
-            </div>
+            <h2 className="display text-3xl lg:text-5xl font-semibold mb-4">HMS &amp; Kvalitetssikring</h2>
+            <p className="lede text-muted text-lg max-w-xl leading-relaxed mb-14">
+              Vi tar helse, miljø, sikkerhet og kvalitet på alvor i alt vi gjør
+            </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={200}>
-            <div className="bg-slate-50 rounded-3xl py-10 overflow-hidden">
-              <div className="space-y-4">
-                <ClientSlider clients={customers} direction="left" speed="120s" />
-                <ClientSlider clients={customers} direction="right" speed="120s" />
-              </div>
-              
-              <div className="mt-8 mx-10 p-6 bg-yellow-50 rounded-xl border border-yellow-200">
-                <h3 className="text-lg font-bold text-yellow-800 mb-2">Fornøyde kunder siden 1995</h3>
-                <p className="text-yellow-700">
-                  GEA, Alfa Laval, Thomas Thiis — og mange fler gjennom 25+ år i bransjen.
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* HMS/KS Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-red-600 text-sm font-semibold uppercase tracking-widest">Sikkerhet</span>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-2 mb-6">HMS & Kvalitetssikring</h2>
-              <p className="text-slate-600 text-xl max-w-3xl mx-auto">
-                Vi tar helse, miljø, sikkerhet og kvalitet på alvor i alt vi gjør
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            <ScrollReveal direction="left">
-              <div className="bg-white rounded-3xl p-8 shadow-sm">
-                <div className="bg-red-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">HMS</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
+          <div className="grid lg:grid-cols-2 gap-6">
+            <ScrollReveal>
+              <article className="h-full bg-surface border border-line hover:border-line-strong transition-colors p-8 lg:p-10">
+                <span className="block w-8 h-1 bg-accent mb-6" />
+                <h3 className="text-xl font-semibold tracking-tight mb-4">HMS</h3>
+                <p className="lede text-muted leading-relaxed mb-4">
                   Som arbeidsgiver kartlegger vi arbeidsmiljøet grundig og vurderer tiltak for å forebygge skader og sykdom. Dette gir oss et godt grunnlag for å skape et trygt og helsefremmende arbeidsmiljø.
                 </p>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="lede text-ink leading-relaxed">
                   Sikkerhet for våre ansatte og kunder er vår høyeste prioritet.
                 </p>
-              </div>
+              </article>
             </ScrollReveal>
-            
-            <ScrollReveal direction="right" delay={200}>
-              <div className="bg-white rounded-3xl p-8 shadow-sm">
-                <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Kvalitetssikringssystem</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
+
+            <ScrollReveal delay={120}>
+              <article className="h-full bg-surface border border-line hover:border-line-strong transition-colors p-8 lg:p-10">
+                <span className="block w-8 h-1 bg-accent mb-6" />
+                <h3 className="text-xl font-semibold tracking-tight mb-4">Kvalitetssikringssystem</h3>
+                <p className="lede text-muted leading-relaxed mb-6">
                   Vårt KS-system sikrer consistent høy kvalitet i alle prosjekter gjennom:
                 </p>
-                <ul className="space-y-3 text-slate-600">
-                  {[
-                    "Dokumentasjon – alle prosesser og prosedyrer",
-                    "Styring – klare ansvarsområder og fullmakter",
-                    "Kommunikasjon – strategi, mål og handlingsplaner",
-                    "Kompetanse – informasjon og opplæring",
-                    "Kvalitetsforbedringer – verifisere og korrigere"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
-                      <span>{item}</span>
+                <ul>
+                  {ksPoints.map((item) => (
+                    <li key={item} className="flex items-start gap-3 py-2 text-sm">
+                      <span aria-hidden className="w-1.5 h-1.5 bg-accent mt-2 flex-shrink-0" />
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </article>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-red-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-4xl font-black text-white mb-4">Vil du samarbeide med oss?</h2>
-            <p className="text-red-100 text-xl mb-10">Ta kontakt for en uforpliktende samtale om ditt prosjekt.</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/kontakt" className="px-8 py-4 bg-white text-red-600 font-bold rounded-xl hover:bg-slate-100 transition-all text-lg">Kontakt oss</Link>
-              <Link href="/tjenester" className="px-8 py-4 bg-red-700 border border-red-500 text-white font-bold rounded-xl hover:bg-red-800 transition-all text-lg">Våre tjenester</Link>
+      {/* Address */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <ScrollReveal className="lg:col-span-5">
+              <h2 className="display text-3xl lg:text-4xl font-semibold mb-5">Besøksadresse</h2>
+              <p className="lede text-muted leading-relaxed mb-8 max-w-md">
+                Vi holder til i moderne lokaler på Lillehammer, sentralt plassert for å betjene kunder over hele landet.
+              </p>
+
+              <address className="not-italic border-l-4 border-accent pl-6 mb-8">
+                <p className="font-semibold tracking-tight mb-1">3TS Industriservice AS</p>
+                <p className="text-muted">Industrigata 50</p>
+                <p className="text-muted">2619 Lillehammer</p>
+              </address>
+
+              <a
+                href="https://maps.google.com/?q=Industrigata+50+2619+Lillehammer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold border-b-2 border-accent pb-1 hover:gap-3 transition-all"
+              >
+                Åpne i Google Maps
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+            </ScrollReveal>
+
+            <div className="lg:col-span-7">
+              <div className="h-80 lg:h-[26rem] border border-line overflow-hidden">
+                <iframe
+                  title="Kart over Industrigata 50, Lillehammer"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3185.3970593525296!2d10.436558678095112!3d61.131514975536724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466a886bccd30b5b%3A0x9e559b4f4bbf267!2sIndustrigata%2050%2C%202619%20Lillehammer!5e1!3m2!1sen!2sno!4v1775175148129!5m2!1sen!2sno"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
+
+      </main>
       <Footer />
     </div>
   );

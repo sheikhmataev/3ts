@@ -5,59 +5,35 @@ import { useEffect, useRef } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
-  direction?: 'up' | 'left' | 'right';
   delay?: number;
 }
 
-export default function ScrollReveal({ 
-  children, 
-  className = '', 
-  direction = 'up', 
-  delay = 0 
-}: ScrollRevealProps) {
+export default function ScrollReveal({ children, className = '', delay = 0 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('active');
-            }, delay);
-          }
+          if (!entry.isIntersecting) return;
+          const target = entry.target as HTMLElement;
+          target.style.transitionDelay = `${delay}ms`;
+          target.classList.add('active');
+          observer.unobserve(target);
         });
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [delay]);
 
-  const getDirectionClass = () => {
-    switch (direction) {
-      case 'left':
-        return 'reveal-left';
-      case 'right':
-        return 'reveal-right';
-      default:
-        return 'reveal';
-    }
-  };
-
   return (
-    <div ref={ref} className={`${getDirectionClass()} ${className}`}>
+    <div ref={ref} className={`reveal ${className}`}>
       {children}
     </div>
   );

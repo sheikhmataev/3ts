@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-archivo",
+  display: "swap",
 });
 
+// Mono is reserved for technical values: prices, org.nr, phone, dimensions.
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -86,9 +89,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
 };
 
 export default function RootLayout({
@@ -98,7 +98,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no" suppressHydrationWarning className="overflow-x-hidden">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans overflow-x-hidden w-full relative bg-white`}>
+      <body className={`${archivo.variable} ${geistMono.variable} antialiased font-sans overflow-x-hidden w-full relative bg-paper text-ink`}>
+        <a
+          href="#innhold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:bg-accent focus:text-accent-ink focus:px-4 focus:py-2 focus:font-semibold"
+        >
+          Hopp til innhold
+        </a>
         {children}
       </body>
     </html>
